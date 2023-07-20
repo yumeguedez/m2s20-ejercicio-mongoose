@@ -1,7 +1,9 @@
 require(`dotenv`).config();
 const express = require("express");
+const { dbConnection } = require("./database/config");
 const app = express();
 
+dbConnection();
 //leer cosas del body
 app.use(express.json());
 
