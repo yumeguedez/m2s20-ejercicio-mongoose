@@ -29,3 +29,10 @@ const eliminarUsuario = (req, res) => {
     data: {},
   });
 };
+
+module.exports = {
+  obtenerUsuarios,
+  crearUsuario,
+  actualizarUsuario,
+  eliminarUsuario,
+};
