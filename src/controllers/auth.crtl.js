@@ -64,7 +64,22 @@ const iniciarSesion = async (req, res) => {
     token,
   });
 };
+
+const renovarToken = async (req, res) => {
+  const { user } = req;
+
+  const token = await generarJWT(user.id);
+
+  return res.json({
+    ok: true,
+    msg: "Token renovado",
+    data: user,
+    token,
+  });
+};
+
 module.exports = {
   registrarUsuario,
   iniciarSesion,
+  renovarToken,
 };
